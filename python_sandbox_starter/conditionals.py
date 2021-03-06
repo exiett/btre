@@ -1,11 +1,15 @@
 # If/ Else conditions are used to decide to do something based on something being true or false
-
-
+x = 10
+y = 6
 
 # Comparison Operators (==, !=, >, <, >=, <=) - Used to compare values
+if x == y:
+    print(f'{x} is equal to {y}.')
 
-
-
+if x > y:
+    print(f'{x} is greater than {y}')
+else:
+    print(f'{x} is less than {y}')
 # Logical operators (and, or, not) - Used to combine conditional statements
 
 

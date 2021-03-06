@@ -13,3 +13,18 @@ VARIABLE RULES:
   - Must start with a letter or an underscore
   - Can have numbers but can not start with one
 """
+
+x       = 1
+y       = 2.5
+name    = 'Brad'
+is_cool = True
+
+x, y, name, is_cool = (2, 3.5, 'Jill', False) # Multi-assignment of variables.
+print(x, y, name ,is_cool)
+
+a = x + y
+print(a)
+
+print(type(a))
+
+name = '@russfrumfrunds'
