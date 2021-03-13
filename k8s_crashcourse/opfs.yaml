@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: opfs
+spec:
+  selector:
+    app: opfs
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opfs
+spec:
+  selector:
+    matchLabels:
+      app: opfs
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: opfs
+    spec:
+      containers:
+      - name: opfs
+        image: eitch/opfs:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: opfs
+spec:
+  rules:
+    - host: exiett.eitch.dc.sec.ifood-prod.com.br
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: opfs
+              servicePort: 5000
