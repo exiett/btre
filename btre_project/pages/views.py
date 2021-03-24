@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from listings.choices import price_choices, bedroom_choices, states_choices
 
+from listings.choices import price_choices, bedroom_choices, states_choices
 from listings.models import Listing
 from realtors.models import Realtor
 
