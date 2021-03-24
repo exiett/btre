@@ -6,12 +6,12 @@ from contacts.models import Contact
 def register(request):
     if request.method == 'POST':
         # Get from values
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        password2 = request.POST['password2']
+        first_name  = request.POST['first_name']
+        last_name   = request.POST['last_name']
+        username    = request.POST['username']
+        email       = request.POST['email']
+        password    = request.POST['password']
+        password2   = request.POST['password2']
 
         # Check if passwords match
         if password == password2:
