@@ -1,0 +1,4 @@
+database = btre_prod
+user = dbadmin
+pwd = abc123!
+
